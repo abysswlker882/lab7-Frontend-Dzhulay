@@ -197,8 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = document.createElement("input");
     input.type = "text";
     input.className = "question-input";
-    input.placeholder = "Вопрошай у пламени...";
-    input.value = "Зажечь ли костёр?";
+    input.placeholder = "Запитуй у полум'я...";
+    input.value = "Чи запалити багаття?";
 
     const errorMessage = document.createElement("div");
     errorMessage.className = "error-message";
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const button = document.createElement("button");
     button.className = "ask-btn";
-    button.textContent = "Возжечь Пламя";
+    button.textContent = "Запалити багаття";
 
     cardContainer.appendChild(inputWrapper);
     cardContainer.appendChild(bonfire);
@@ -230,13 +230,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const question = input.value.trim();
 
         if (question === "") {
-            errorMessage.textContent = "Пламя не слышит тишины!";
+            errorMessage.textContent = "Полум'я не чує тиші!";
             input.focus();
             return;
         }
 
         if (question.length < 3) {
-            errorMessage.textContent = "Слишком короткое воззвание!";
+            errorMessage.textContent = "Занадто коротке звернення!";
             return;
         }
 
