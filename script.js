@@ -1,16 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Добавление стилей Dark Souls в head
     const style = document.createElement("style");
     style.textContent = `
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Cinzel', serif, Georgia, 'Times New Roman';
-        }
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', 'Times New Roman', serif; 
         body {
             background: #080707;
             background-image: radial-gradient(circle, #1a0f0a 0%, #050505 100%);
@@ -23,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
             overflow-x: hidden;
         }
 
-        /* Карточка-контейнер в стиле древнего свитка / алтаря */
         .card-container {
             position: relative;
             width: 100%;
@@ -41,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             outline: 1px solid #1a100a;
         }
 
-        /* Блок ввода вопроса */
         .input-wrapper {
             width: 100%;
             display: flex;
@@ -71,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             box-shadow: 0 0 15px rgba(255, 102, 0, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.9);
         }
 
-        /* Ошибка валидации */
         .error-message {
             color: #ff3333;
             font-size: 0.85rem;
@@ -82,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
             letter-spacing: 1px;
         }
 
-        /* Костёр (Bonfire) */
         .bonfire-container {
             position: relative;
             width: 75%;
@@ -104,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
             box-shadow: inset 0 0 40px #000000, 0 0 45px rgba(255, 102, 0, 0.5);
         }
 
-        /* Текст ответа / предсказания */
         .answer-text {
             color: #fce8cd;
             font-size: 1.4rem;
@@ -119,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
             line-height: 1.4;
         }
 
-        /* Анимация разгорания костра */
         @keyframes kindle {
             0% { box-shadow: inset 0 0 40px #000000, 0 0 20px rgba(255, 60, 0, 0.3); transform: scale(1); }
             50% { box-shadow: inset 0 0 20px #ff3300, 0 0 60px rgba(255, 120, 0, 0.9); transform: scale(1.04); }
@@ -130,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
             animation: kindle 0.7s ease-in-out;
         }
 
-        /* Кнопка в стиле интерфейса DS */
         .ask-btn {
             padding: 12px 30px;
             background: linear-gradient(180deg, #2a1c13 0%, #120b07 100%);
@@ -157,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             transform: translateY(1px);
         }
 
-        /* Адаптивность */
+        /* Адаптивність */
         @media (max-width: 480px) {
             .card-container {
                 max-width: 100%;
@@ -173,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(style);
 
-    // 2. Предсказания в стиле Dark Souls
     const answers = [
         "HUMANITY RESTORED",
         "YOU DIED",
@@ -187,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Victory Achieved"
     ];
 
-    // 3. Динамическая сборка DOM
+    // Динамічна сбірка DOM
     const cardContainer = document.createElement("div");
     cardContainer.className = "card-container";
 
@@ -225,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.appendChild(cardContainer);
 
-    // 4. Логика предсказания и анимации
+    // Логіка предсказання
     function getPrediction() {
         const question = input.value.trim();
 
